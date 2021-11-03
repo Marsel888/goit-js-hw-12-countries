@@ -10,7 +10,7 @@ function apiService(curentCountry) {
     console.log(error);
   }
 
-  return apiService;
+  // return apiService;
 }
 
 

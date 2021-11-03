@@ -38,7 +38,9 @@ function country(e) {
     return;
   }
 
-  apiService(curentCountry).then(data => {
+  apiService(curentCountry)
+  .then(data => {
+    console.log(data);
     const arrayLength = data.length;
   
     if (arrayLength >= 2 && arrayLength <= 10) {
@@ -66,7 +68,7 @@ function renderCountryList(array) {
   const names = array.map(item => item.name);
 
   const markup = liCountry({ names });
-
+console.log(markup);
   div.insertAdjacentHTML('afterbegin', markup);
 }
 
