@@ -6,7 +6,7 @@ import { error, Stack } from '../node_modules/@pnotify/core/dist/PNotify.js';
 import '@pnotify/core/dist/BrightTheme.css';
 
 function errorPopup() {
-  div.innerHTML = ''
+  div.innerHTML = '';
   error({
     sticker: false,
     delay: '500',
@@ -38,29 +38,24 @@ function country(e) {
     return;
   }
 
-  apiService(curentCountry)
-  .then(data => {
+  apiService(curentCountry).then(data => {
     console.log(data);
     const arrayLength = data.length;
-  
+
     if (arrayLength >= 2 && arrayLength <= 10) {
       div.innerHTML = '';
       renderCountryList(data);
 
-      return
-    } 
+      return;
+    }
 
-    if(arrayLength === 1){ 
+    if (arrayLength === 1) {
       div.innerHTML = '';
-    renderCountry(data);
-  return
-  }
+      renderCountry(data);
+      return;
+    }
 
-    
-  errorPopup()
-
-
-
+    errorPopup();
   });
 }
 
@@ -68,7 +63,7 @@ function renderCountryList(array) {
   const names = array.map(item => item.name);
 
   const markup = liCountry({ names });
-console.log(markup);
+  console.log(markup);
   div.insertAdjacentHTML('afterbegin', markup);
 }
 
