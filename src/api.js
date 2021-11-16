@@ -7,7 +7,7 @@ function apiService(curentCountry) {
     const data = fetch(`https://restcountries.com/v2/name/${curentCountry}`).then(response => response.json());
     return data
   } catch (error) {
-    console.log(error);
+    console.log(error => console.log(error , "ОШИЬКА!!!"));
   }
 
   // return apiService;
